@@ -50,6 +50,7 @@ environment will not work in the argument of another command.
 %doc %{_texmfdistdir}/doc/latex/sgame/README
 %doc %{_texmfdistdir}/doc/latex/sgame/sgame.pdf
 %doc %{_texmfdistdir}/doc/latex/sgame/sgame.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -60,3 +61,5 @@ environment will not work in the argument of another command.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
