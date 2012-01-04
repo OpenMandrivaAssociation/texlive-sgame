@@ -6,7 +6,7 @@
 # catalog-version 2.14
 Name:		texlive-sgame
 Version:	2.14
-Release:	1
+Release:	2
 Summary:	LaTeX style for typesetting strategic games
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/sgame
