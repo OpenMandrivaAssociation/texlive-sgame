@@ -1,12 +1,12 @@
-# revision 15878
+# revision 30959
 # category Package
 # catalog-ctan /macros/latex/contrib/sgame
-# catalog-date 2008-12-03 15:15:08 +0100
+# catalog-date 2013-06-26 19:53:21 +0200
 # catalog-license lppl
-# catalog-version 2.14
+# catalog-version 2.15
 Name:		texlive-sgame
-Version:	2.14
-Release:	2
+Version:	2.15
+Release:	1
 Summary:	LaTeX style for typesetting strategic games
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/sgame
@@ -51,17 +51,3 @@ environment will not work in the argument of another command.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 2.14-2
-+ Revision: 755975
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 2.14-1
-+ Revision: 719519
-- texlive-sgame
-- texlive-sgame
-- texlive-sgame
-- texlive-sgame
-
