@@ -1,18 +1,12 @@
-# revision 30959
-# category Package
-# catalog-ctan /macros/latex/contrib/sgame
-# catalog-date 2013-06-26 19:53:21 +0200
-# catalog-license lppl
-# catalog-version 2.15
 Name:		texlive-sgame
-Version:	2.15
-Release:	10
+Version:	30959
+Release:	1
 Summary:	LaTeX style for typesetting strategic games
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/sgame
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/sgame.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/sgame.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/sgame.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/sgame.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -27,12 +21,12 @@ vertically centered within the boxes. Note that the game
 environment will not work in the argument of another command.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -44,7 +38,7 @@ environment will not work in the argument of another command.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
