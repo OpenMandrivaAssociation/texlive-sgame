@@ -3,7 +3,7 @@ Version:	30959
 Release:	2
 Summary:	LaTeX style for typesetting strategic games
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/sgame
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/sgame
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/sgame.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/sgame.doc.r%{version}.tar.xz
