@@ -1,47 +1,25 @@
-Name:		texlive-sgame
-Version:	30959
-Release:	2
+%global tl_name sgame
+%global tl_revision 30959
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.15
+Release:	%{tl_revision}.1
 Summary:	LaTeX style for typesetting strategic games
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/sgame
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/sgame.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/sgame.doc.r%{version}.tar.xz
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/sgame.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/sgame.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Formats strategic games. For a 2x2 game, for example, the
-input: \begin{game}{2}{2} &$L$ &$M$\\ $T$ &$2,2$ &$2,0$\\ $B$
-&$3,0$ &$0,9$ \end{game} produces output with (a) boxes around
-the payoffs, (b) payoff columns of equal width, and (c) payoffs
-vertically centered within the boxes. Note that the game
-environment will not work in the argument of another command.
+Formats strategic games. For a 2x2 game, for example, the input:
+\begin{game}{2}{2} &$L$ &$M$\\ $T$ &$2,2$ &$2,0$\\ $B$ &$3,0$ &$0,9$
+\end{game} produces output with (a) boxes around the payoffs, (b) payoff
+columns of equal width, and (c) payoffs vertically centered within the
+boxes. Note that the game environment will not work in the argument of
+another command.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/sgame/sgame.sty
-%{_texmfdistdir}/tex/latex/sgame/sgamevar.sty
-%doc %{_texmfdistdir}/doc/latex/sgame/README
-%doc %{_texmfdistdir}/doc/latex/sgame/sgame.pdf
-%doc %{_texmfdistdir}/doc/latex/sgame/sgame.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
